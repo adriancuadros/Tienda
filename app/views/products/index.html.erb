@@ -29,7 +29,13 @@
 		</p>
 
 	    <span><%= product.price %></span>
-
+		
+		<p>
+			<%= link_to 'Agregar al carrito',
+			 			 add_to_cart_product_path(product),
+			 			:method => :post %>
+		</p>
+		
 	    <p>
 			<%= link_to 'Editar', edit_product_path(product) %>
 			<%= link_to 'Eliminar', product, :confirm => 'Are you sure?', :method => :delete %>
