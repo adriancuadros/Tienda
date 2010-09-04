@@ -74,4 +74,11 @@ class ProductsController < ApplicationController
       format.xml  { head :ok }
     end
   end
+  
+  def add_to_cart
+    @product = Product.find(params[:id])
+    @cart.add_product(@product)
+    redirect_to product_path
+  end
+  
 end
