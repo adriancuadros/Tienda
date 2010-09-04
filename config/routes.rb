@@ -1,4 +1,8 @@
 Tienda::Application.routes.draw do
+  resources :items
+
+  resources :carts
+
   resources :products
 
   # The priority is based upon order of creation:

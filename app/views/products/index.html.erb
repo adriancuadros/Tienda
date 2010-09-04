@@ -1,5 +1,23 @@
 <h1>Tienda</h1>
 
+<h2>Carrito de compras</h2>
+
+<% if @cart.items.empty? %>
+	<p>Todav&iacute;a no compraste nada</p>
+<% else %>
+	<table>
+		<tr>
+			<th>Producto</th>
+			<th>Cantidad</th>
+		</tr>
+	<% @cart.items.each do |item| %>
+		<tr>
+			<td><%= item.product.name %></td>
+			<td><%= item.units %></td>
+		</tr>
+	<% end %>
+	</table>
+<% end %>
 
 <% @products.each do |product| %>
 	<div class='product'>
@@ -13,8 +31,8 @@
 	    <span><%= product.price %></span>
 
 	    <p>
-			<%= link_to 'Edit', edit_product_path(product) %>
-			<%= link_to 'Destroy', product, :confirm => 'Are you sure?', :method => :delete %>
+			<%= link_to 'Editar', edit_product_path(product) %>
+			<%= link_to 'Eliminar', product, :confirm => 'Are you sure?', :method => :delete %>
 		</p>
 		
 	</div>
