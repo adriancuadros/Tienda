@@ -78,7 +78,7 @@ class ProductsController < ApplicationController
   def add_to_cart
     @product = Product.find(params[:id])
     @cart.add_product(@product)
-    redirect_to product_path
+    redirect_to products_path
   end
   
 end
