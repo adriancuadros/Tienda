@@ -1,0 +1,13 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  name: MyString
+  price: 9.99
+  units: 1
+  description: MyText
+
+two:
+  name: MyString
+  price: 9.99
+  units: 1
+  description: MyText
