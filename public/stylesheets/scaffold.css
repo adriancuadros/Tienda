@@ -54,3 +54,9 @@ div.field, div.actions {
   font-size: 12px;
   list-style: square;
 }
+
+.product{
+	width:400px;
+	border:1px solid #999;
+	margin:5px;
+}
