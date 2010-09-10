@@ -7,8 +7,62 @@
   <%= csrf_meta_tag %>
 </head>
 <body>
+	
+	<div id="header">
+		<div class="wrapper">
+			<!--LOGO-->
+			<div id="logo">
+				<h1 style='color:#fff'>Mi super tienda</h1>
+			</div>
+			<!--MENU-->
+			<div id="menu">
+				<%= render :partial => 'layouts/main_menu' %>
+			</div>
+		</div>
+	</div>
 
-<%= yield %>
-
+	<!--CONTENTENIDO-->
+	<div id="content">
+		<div class="wrapper">
+			<!--MAIN-->
+			<div id="main"></div>
+				<!--MENU TIENDA-->
+				<div id="ribbon">
+					<!--HOME-->
+					<div id="menutienda">
+						<table width="100%" cellpadding="0" cellspacing="0">
+							<tr>
+								<td width="35px" style="background:url(/images/home.png) right center no-repeat; text-align: right;">
+									<%= link_to image_tag("casa.gif", :alt => "home", :style => 'border:none;'), products_path %>
+								</td>
+								<td>
+									
+								</td>
+							</tr>
+						</table>
+					</div>
+				</div>
+				<!--REST-->
+				<div id="rest">
+					<!--LEFT-->
+					<div id="cleft">
+						<!--MINI CART-->
+						<div id="minicart" class="spanish_cart">
+							<div class="content">
+								<%= render :partial => '/products/cart' %>
+							</div>
+						</div>
+					</div>
+					<!--RIGHT-->
+					<div id="cright">
+						<%- flash.each do |name, msg| -%>
+					      <%= content_tag :div, msg, :id => "flash_#{name}" %>
+					    <%- end -%>
+						<!--BREAD + PAGES-->
+						<%= yield %>
+					</div>
+				</div>
+		</div>
+	</div>
 </body>
 </html>
