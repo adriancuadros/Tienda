@@ -2,7 +2,7 @@ class ProductsController < ApplicationController
 
   def index
     if !params[:search].blank?
-      @products = Product.where('name like ?', "%#{params[:search]}%")
+      @products = Product.where('name like ? or description like ?', "%#{params[:search]}%", "%#{params[:search]}%")
     else
       @products = Product.all
     end  
