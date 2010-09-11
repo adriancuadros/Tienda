@@ -13,7 +13,9 @@
 		</tr>
 	</table>
 
-	<p><%= link_to image_tag("comprarcarrito.png", :class => 'cartcheckout') %></p>
+	<p>
+		<%= link_to image_tag("comprarcarrito.png", :class => 'cartcheckout'), @cart %>
+	</p>
 
 	<div class="clearb"></div>
 <% else %>

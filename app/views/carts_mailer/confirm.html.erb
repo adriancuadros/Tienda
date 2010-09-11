@@ -1,4 +1,12 @@
-<h1>Confirmacion de compra</h1>
+<p>
+	Estimado <%= @user.first_name %>
+</p>
+
+<p>
+	Te confimamos la compra de la orden #<%= @cart.id %>
+<p>
+	
+<p>Los productos que compraste son:</p>
 
 <table>
 	<tr>
@@ -17,8 +25,6 @@
 	
 </table>
 
-<h2>Total: <%= number_to_currency(@cart.total) %></h2>
+<h2>El total de tu compra es <%= @cart.total %></h2>
 
-<%= form_tag confirm_cart_path, :method => :post do %>
-	<%= submit_tag 'Confirmar compra' %>
-<% end %>
+<p>Gracias por comprar en la super tienda.</p>

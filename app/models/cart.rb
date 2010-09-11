@@ -19,4 +19,9 @@ class Cart < ActiveRecord::Base
     total
   end
   
+  def confirm!
+    self.status = 'confirmed'
+    self.save
+  end
+  
 end
