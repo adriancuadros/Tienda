@@ -9,7 +9,7 @@
 		<% end %>
 		<tr>
 			<td colspan="2">Total</td>
-			<td class="cart_prc" id="cart_total">???</td>
+			<td class="cart_prc" id="cart_total"><%= number_to_currency @cart.total %></td>
 		</tr>
 	</table>
 

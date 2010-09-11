@@ -11,4 +11,12 @@ class Cart < ActiveRecord::Base
     end
   end
   
+  def total
+    total = 0
+    self.items.each do |item|
+      total += (item.product.price * item.units)
+    end
+    total
+  end
+  
 end

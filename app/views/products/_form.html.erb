@@ -1,4 +1,4 @@
-<%= form_for(@product) do |f| %>
+<%= form_for(@product, :html => {:multipart => true}) do |f| %>
 
   <% if @product.errors.any? %>
     <div id="error_explanation">
@@ -23,6 +23,12 @@
     <%= f.label :units, 'Unidades' %><br />
     <%= f.text_field :units %>
   </div>
+
+  <div class="field">
+    <%= f.label :image, 'Imagen' %><br />
+    <%= f.file_field :image %>
+  </div>
+
   <div class="field">
     Descripci&oacute;n<br />
     <%= f.text_area :description %>

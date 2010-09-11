@@ -2,7 +2,7 @@
 
 	<div class="item">
 		<div class="imageholder">
-			<%= link_to image_tag('missing.gif'), product %>
+			<%= link_to image_tag(product.image.url), product %>
 		</div>
 		<p class="name"><%= link_to product.name, product %></p>	
 		<p class="price"><%= number_to_currency product.price %></p>

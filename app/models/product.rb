@@ -2,6 +2,8 @@ class Product < ActiveRecord::Base
   
   has_many    :items
   
+  has_attached_file         :image
+  
   validates_presence_of     :name, :message => 'El nombre no puede estar en blanco'
   validates_presence_of     :price, :message => 'El precio no puede estar en blanco'
   
