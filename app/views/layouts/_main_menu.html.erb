@@ -1,5 +1,9 @@
 <ul>
 	<% if user_signed_in? %>
 		<li><%= link_to "Crear producto", new_product_path %></li>
+		<li><%= link_to "Salir", destroy_user_session_path %></li>
+	<% else %>
+		<li><%= link_to "Entrar", new_user_session_path %></li>
+		<li><%= link_to "Registro", new_user_registration_path %></li>
 	<% end %>
 </ul>
