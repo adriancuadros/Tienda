@@ -1,3 +1,5 @@
 <ul>
-	<li><%= link_to "Crear producto", new_product_path %></li>
+	<% if user_signed_in? %>
+		<li><%= link_to "Crear producto", new_product_path %></li>
+	<% end %>
 </ul>

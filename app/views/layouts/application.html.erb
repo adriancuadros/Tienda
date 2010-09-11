@@ -28,8 +28,11 @@
 			
 			<div id="main">
 				<p>
+					
 					<div id="hello">
-						<h2>Bienvenido</h2>
+						<% if user_signed_in? %>
+							<h2>Bienvenido <%= current_user.first_name %></h2>
+						<% end %>
 					</div>
 					<div id="search">
 						<% form_tag(products_path, :method => :get) do %>
