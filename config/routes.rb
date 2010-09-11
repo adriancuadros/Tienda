@@ -6,7 +6,11 @@ Tienda::Application.routes.draw do
   
   resources :items
 
-  resources :carts
+  resources :carts do
+    member do
+      post :confirm
+    end
+  end
 
   resources :products do
     member do 

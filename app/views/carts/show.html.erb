@@ -1,0 +1,24 @@
+<h1>Confirmacion de compra</h1>
+
+<table>
+	<tr>
+		<th>Producto</th>
+		<th>Cantidad</th>
+		<th>Precio</th>
+	</tr>
+		
+	<% @cart.items.each do |item| %>
+		<tr>
+		<td><%= item.product.name %></td>
+		<td><%= item.units %></td>
+		<td><%= item.product.price %></td>
+		</tr>
+	<% end %>
+	
+</table>
+
+<h2>Total: <%= number_to_currency(@cart.total) %></h2>
+
+<%= form_tag confirm_cart_path do %>
+	<%= submit_tag 'Confirmar compra' %>
+<% end %>
