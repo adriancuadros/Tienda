@@ -1,4 +1,7 @@
 Tienda::Application.routes.draw do
+  
+  root :to => "products#index"
+  
   resources :items
 
   resources :carts

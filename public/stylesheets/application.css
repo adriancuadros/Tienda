@@ -251,7 +251,7 @@ a {
 	_height: 26px;
 }
 .sbutton {
-	float: left;
+	float: right;
 }
 /*MENU TIENDA*/
 #ribbon {
@@ -1101,4 +1101,26 @@ ul#benefits li {
 background:transparent url(/images/check.gif) no-repeat scroll 0 5px;
 border-top:1px solid #C9D5C4;
 padding:4px 0 4px 25px;
+}
+
+.form{
+	background-color:#FFF;
+	padding:20px;
+}
+
+#hello h2{
+	margin:0px;
+	padding:0px;
+}
+
+.form h1{
+	margin-top:0px;
+}
+
+input{
+	font-size:18px;
+}
+
+.imageholder img{
+	width:150px;
 }

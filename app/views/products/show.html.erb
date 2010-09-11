@@ -1,25 +1,30 @@
-<p id="notice"><%= notice %></p>
+<!--PRODUCTOS-->
+<div class="clear">
+	<!--FOTO-->
+	<div class="left">
 
-<p>
-  <b>Name:</b>
-  <%= @product.name %>
-</p>
+		<div class="pic">
+			<%= image_tag "missing.gif", :alt => "Picture Not Available" %>
+		</div>
+	</div>
+	<!--DESCRIPCION-->
+	<div class="descripcion">
+		<h2><%= @product.name %></h2>
+		<p><%= @product.description %></p>
+		<p><em>Existence: </em><%= @product.units %></p>
+		<p class="precio"><%= number_to_currency @product.price %></p>
+		<div class="clearb">
+			<p>
+				<%= link_to 'Agregar al carrito',
+				 			 add_to_cart_product_path(@product),
+				 			:method => :post %>
+			</p>
 
-<p>
-  <b>Price:</b>
-  <%= @product.price %>
-</p>
-
-<p>
-  <b>Units:</b>
-  <%= @product.units %>
-</p>
-
-<p>
-  <b>Description:</b>
-  <%= @product.description %>
-</p>
-
-
-<%= link_to 'Edit', edit_product_path(@product) %> |
-<%= link_to 'Back', products_path %>
+			<p>
+				<%= link_to 'Editar', edit_product_path(@product) %>
+				<%= link_to 'Eliminar', @product, :confirm => 'Estas seguro?', :method => :delete %>
+			</p>
+		</div>
+	</div>
+                 
+</div>

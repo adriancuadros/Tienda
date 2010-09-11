@@ -1,9 +1,21 @@
-<table>
-	<% @cart.items.each do |item| %>
+<% unless @cart.items.empty? %>
+	<table>
+		<% @cart.items.each do |item| %>
+			<tr>
+				<td class='cart_name'><%= item.product.name %></td>
+				<td class='cart_qty'><%= item.units %></td>
+				<td class='cart_price'><%= number_to_currency item.product.price %></td>
+			</tr>
+		<% end %>
 		<tr>
-			<td class='cart_name'><%= item.product.name %></td>
-			<td class='cart_qty'><%= item.units %></td>
-			<td class='cart_price'><%= number_to_currency item.product.price %></td>
+			<td colspan="2">Total</td>
+			<td class="cart_prc" id="cart_total">???</td>
 		</tr>
-	<% end %>
-</table>
+	</table>
+
+	<p><%= link_to image_tag("comprarcarrito.png", :class => 'cartcheckout') %></p>
+
+	<div class="clearb"></div>
+<% else %>
+	<p style='padding:10px'>Todav&iacute;a no has comprado nada</p>
+<% end %>

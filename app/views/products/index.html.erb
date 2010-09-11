@@ -2,6 +2,7 @@
 
 	<div class="item">
 		<div class="imageholder">
+			<%= link_to image_tag('missing.gif'), product %>
 		</div>
 		<p class="name"><%= link_to product.name, product %></p>	
 		<p class="price"><%= number_to_currency product.price %></p>
@@ -12,10 +13,6 @@
 			 			:method => :post %>
 		</p>
 		
-		<p>
-			<%= link_to 'Editar', edit_product_path(product) %>
-			<%= link_to 'Eliminar', product, :confirm => 'Are you sure?', :method => :delete %>
-		</p>
 	</div>
 	
 <% end %>

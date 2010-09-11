@@ -12,7 +12,7 @@
 		<div class="wrapper">
 			<!--LOGO-->
 			<div id="logo">
-				<h1 style='color:#fff'>Mi super tienda</h1>
+				<a href='/'><h1 style='color:#fff'>Mi super tienda</h1></a>
 			</div>
 			<!--MENU-->
 			<div id="menu">
@@ -25,7 +25,21 @@
 	<div id="content">
 		<div class="wrapper">
 			<!--MAIN-->
-			<div id="main"></div>
+			
+			<div id="main">
+				<p>
+					<div id="hello">
+						<h2>Bienvenido</h2>
+					</div>
+					<div id="search">
+						<% form_tag(products_path, :method => :get) do %>
+						<%= image_submit_tag "buscar.png", :class => 'sbutton' %>
+						
+							<%= text_field_tag :search, params[:search], :class => 'sbox' %>
+						<% end %>
+					</div>
+				</p>
+			</div>
 				<!--MENU TIENDA-->
 				<div id="ribbon">
 					<!--HOME-->
@@ -58,7 +72,6 @@
 						<%- flash.each do |name, msg| -%>
 					      <%= content_tag :div, msg, :id => "flash_#{name}" %>
 					    <%- end -%>
-						<!--BREAD + PAGES-->
 						<%= yield %>
 					</div>
 				</div>
