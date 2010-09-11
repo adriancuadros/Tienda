@@ -1,7 +1,11 @@
 class ProductsController < ApplicationController
 
   def index
-    @products = Product.all
+    if !params[:search].blank?
+      @products = Product.where('name like ?', "%#{params[:search]}%")
+    else
+      @products = Product.all
+    end  
   end
 
   # GET /products/1
